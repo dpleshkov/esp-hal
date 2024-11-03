@@ -27,10 +27,7 @@ use esp_println::{print, println};
 use esp_wifi::{
     init,
     wifi::{
-        utils::create_network_interface,
-        AccessPointConfiguration,
-        Configuration,
-        WifiApDevice,
+        utils::create_network_interface, AccessPointConfiguration, Configuration, WifiApDevice,
     },
     wifi_interface::WifiStack,
     EspWifiInitFor,
@@ -66,7 +63,7 @@ fn main() -> ! {
     let mut wifi_stack = WifiStack::new(iface, device, sockets, now);
 
     let client_config = Configuration::AccessPoint(AccessPointConfiguration {
-        ssid: "esp-wifi".try_into().unwrap(),
+        ssid: "slugsec-esp32s3".try_into().unwrap(),
         ..Default::default()
     });
     let res = controller.set_configuration(&client_config);
