@@ -28,8 +28,6 @@ use esp_println::println;
 use esp_wifi::{init, wifi, EspWifiInitFor};
 use ieee80211::{match_frames, mgmt_frame::BeaconFrame};
 
-use core::slice::SlicePattern;
-
 static KNOWN_SSIDS: Mutex<RefCell<BTreeSet<String>>> = Mutex::new(RefCell::new(BTreeSet::new()));
 
 #[entry]
