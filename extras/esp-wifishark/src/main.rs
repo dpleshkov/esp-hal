@@ -39,7 +39,7 @@ fn main() {
         dlt: Dlt {
             data_link_type: DataLink::USER0,
             name: "USER0".into(),
-            display: "Ethernet".into(),
+            display: "802.11".into(),
         },
     };
 
@@ -89,7 +89,7 @@ fn main() {
         }
         ExtcapStep::Capture(capture_step) => {
             let (data_link, prefix) = if capture_step.interface == wifi_capture_interface.value {
-                (DataLink::ETHERNET, "@WIFIFRAME [")
+                (DataLink::IEEE802_11, "@WIFIFRAME [")
             } else {
                 (DataLink::BLUETOOTH_HCI_H4, "@HCIFRAME [")
             };
